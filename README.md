@@ -27,4 +27,4 @@
 
 # The project is in an early development stage. The current project is a prototype with many future planned additions
 
-<img src="https://imgur.com/a/EoBiZwm" alt="Demo of application" width="300"/>
+<img src="https://imgur.com/a/EoBiZwm.jpg" alt="Demo of application" width="300"/>
