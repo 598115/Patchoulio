@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Keeper</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Dynamic Cache Busting for styles.css -->
+    <script>
+        // Get the current timestamp (or a random number) to use as a cache buster
+        const cacheBuster = new Date().getTime();
+        // Create the link element for styles.css
+        const styleLink = document.createElement('link');
+        styleLink.rel = 'stylesheet';
+        styleLink.href = '../css/styles.css?v=' + cacheBuster; // Append the unique timestamp
+        // Append the link element to the head of the document
+        document.head.appendChild(styleLink);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Main application title is now H1 for semantic correctness -->
+        <h1 class="text-5xl font-extrabold text-center text-violet-700 mb-4">Patchoulio</h1>
+        <!-- Sub-header for the application functionality is now H2 -->
+        <h2 class="text-3xl font-bold text-center text-violet-400 mb-6">My Collection Keeper</h2>
+
+        <!-- User Information -->
+        <div class="bg-neutral-800 p-4 rounded-xl shadow-inner">
+            <h2 class="text-xl font-semibold text-gray-300 mb-2">User Information</h2>
+            <p class="text-gray-300">Your User ID: <span id="userIdDisplay" class="font-mono text-blue-400 break-all">Local User (No Authentication)</span></p>
+        </div>
+
+        <!-- Message Box -->
+        <div id="messageBox" class="message-box"></div>
+
+        <!-- Collection Management -->
+        <div class="p-6 bg-neutral-800 rounded-xl shadow-md">
+            <h2 class="section-header text-blue-500">Manage Collections</h2>
+            <div class="flex flex-col sm:flex-row gap-3 mb-4">
+                <input type="text" id="newCollectionName" placeholder="Enter collection name" class="input-field flex-grow">
+                <button id="addCollectionBtn" class="btn-primary bg-blue-800 flex-shrink-0">Add Collection</button>
+            </div>
+            <div id="collectionsList" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Collections will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Item Management (initially hidden, shown when a collection is selected) -->
+        <div id="itemManagementSection" class="p-6 bg-neutral-800 rounded-xl shadow-md hidden">
+            <h2 class="section-header text-green-500">Items in <span id="selectedCollectionNameDisplay" class="font-bold"></span></h2>
+            <div class="flex flex-col sm:flex-row gap-3 mb-4">
+                <input type="text" id="newItemName" placeholder="Enter item name" class="input-field flex-grow">
+                <input type="text" id="newItemDescription" placeholder="Enter item description (optional)" class="input-field flex-grow">
+                <!-- New HTML for image upload -->
+                <input type="file" id="newItemImage" accept="image/*" class="input-field flex-grow py-2">
+                <img id="newItemImagePreview" src="" alt="Image Preview" class="hidden w-24 h-24 object-contain rounded-md border border-gray-300">
+                <!-- End new HTML -->
+                <button id="addItemBtn" class="btn-primary flex-shrink-0">Add Item</button>
+            </div>
+            <div id="itemsList" class="grid grid-cols-1 gap-4">
+                <!-- Items will be loaded here -->
+            </b>
+        </div>
+    </div>
+
+    <!-- Link to main application JavaScript module -->
+    <script type="module" src="../js/CollectionApp.js"></script>
+</body>
+</html>

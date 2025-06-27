@@ -1,0 +1,217 @@
+
+       body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; /* Very dark background for the body */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .container {
+            background-color: #1d1d1d; /* Dark grey background for the main container */
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Stronger shadow for contrast */
+            padding: 2rem;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            color: #e0e0e0; /* Light text color for general content */
+        }
+        /* Ensure general text color is light for readability on dark backgrounds */
+        h1, h2, h3, h4, p, span, label {
+            color: #e0e0e0;
+        }
+        .section-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f0f0f0; /* Lighter color for section headers */
+            margin-bottom: 1rem;
+        }
+        .text-purple-700 {
+            color: #7B1FA2; /* Adjusted purple for Patchoulio title for better contrast on dark */
+        }
+        /* Set 'My Collection Keeper' title to a distinct grey, not pure white, to fit theme */
+        .text-white {
+            color: #ffffff; /* Light grey for 'My Collection Keeper' title */
+        }
+        /* Ensure the user info box is dark */
+        .bg-gray-800 {
+            background-color: #55565B; /* Darker background for user info box */
+            color: #e0e0e0; /* Ensure text is readable */
+        }
+        .text-gray-700 {
+            color: #f0f0f0; /* Lighter text for user info header */
+        }
+        .text-gray-600 {
+            color: #d0d0d0; /* Lighter text for user ID text */
+        }
+        .text-blue-700 {
+            color: #93c5fd; /* Lighter blue for user ID itself */
+        }
+        .btn-primary {
+            background-color: #60a5fa; /* Keep blue for primary actions */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #3b82f6; /* Darker blue on hover */
+            transform: translateY(-2px);
+        }
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        /* Ensure input fields are dark */
+        .input-field {
+            padding: 0.75rem;
+            border: 1px solid #333333; /* Darker border for inputs */
+            border-radius: 0.5rem;
+            width: 100%;
+            font-size: 1rem;
+            background-color: #202020; /* Dark background for inputs */
+            color: #e0e0e0; /* Light text color for input text */
+        }
+        .input-field::placeholder {
+            color: #888888; /* Darker placeholder text */
+        }
+        .message-box {
+            background-color: #4a1c1c; /* Darker red for error background */
+            color: #ffbaba; /* Lighter red for error text */
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 500;
+            border: 1px solid #7d2c2c; /* Darker red border */
+            display: none; /* Hidden by default */
+        }
+        .message-box.show {
+            display: block;
+        }
+        .message-box.success {
+            background-color: #1c4a1c;
+            color: #baffba;
+            border-color: #2c7d2c;
+        }
+        /* Ensure collection management section is dark */
+        .bg-blue-50 {
+            background-color: #202020; /* Darker grey for collection section background */
+            color: #e0e0e0;
+        }
+        .text-blue-800 {
+            color: #93c5fd; /* Lighter blue for collection section header */
+        }
+        /* Ensure item management section is dark */
+        .bg-green-50 {
+            background-color: #202020; /* Darker grey for item section background */
+            color: #e0e0e0;
+        }
+        .text-green-800 {
+            color: #86efac; /* Lighter green for item section header */
+        }
+        /* Ensure collection cards are dark */
+        .collection-card {
+            background-color: #2a2a2a; /* Darker grey for collection cards */
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            color: #e0e0e0; /* Light text for collection card names */
+        }
+        .collection-card:hover {
+            background-color: #333333; /* Slightly lighter grey on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .collection-card.selected {
+            background-color: #60a5fa; /* Lighter blue for selected state */
+            border: 2px solid #3b82f6;
+            color: white; /* White text on selected card */
+        }
+        /* Inherit color from parent (.collection-card) for this specific span within */
+        .collection-card .font-semibold.text-lg.text-gray-800 {
+            color: inherit;
+        }
+
+        /* Ensure item cards are dark */
+        .item-card {
+            background-color: #2a2a2a; /* Darker grey for item cards */
+            padding: 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid #333333; /* Darker border for item cards */
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            color: #e0e0e0; /* Light text for item card content */
+        }
+        .item-card h4 {
+            font-weight: 600;
+            color: #f0f0f0; /* Lighter color for item name */
+        }
+        .item-card p {
+            color: #b0b0b0; /* Slightly darker light text for description */
+            font-size: 0.9rem;
+        }
+        .delete-btn {
+            background-color: #ef4444; /* Keep red for delete, but adjust hover */
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .delete-btn:hover {
+            background-color: #dc2626;
+        }
+        .edit-btn {
+            background-color: #fbbf24; /* Adjusted yellow for edit */
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            transition: background-color 0.2s;
+            margin-right: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        .edit-btn:hover {
+            background-color: #d97706; /* Darker yellow on hover */
+        }
+        /* Styles for modals (confirmation and edit item) - ensure they are dark */
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.85); /* Even darker overlay */
+        }
+        .modal-content {
+            background-color: #2c2c2c; /* Dark background for modal */
+            color: #e0e0e0; /* Light text inside modal */
+        }
+        .modal-content label {
+            color: #f0f0f0; /* Light text for labels in modal */
+        }
+        .modal-content .input-field {
+            background-color: #1a1a1a; /* Even darker input in modal */
+            color: #e0e0e0;
+            border-color: #333333;
+        }
+        .modal-content .text-red-500 {
+            color: #f87171; /* Lighter red for 'Clear Image' text */
+        }
+        .text-gray-500 {
+            color: #9ca3af;
+        }
+        .hidden {
+            display: none;
+        }
+ 
