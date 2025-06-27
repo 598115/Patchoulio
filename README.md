@@ -21,7 +21,10 @@
 ### 💻 Runs in Your Browser
 - No installation required—just open it in your **web browser**.
 - All data is stored **locally**, so your privacy is respected.
-- Planned optinal cloud saving option in future
+- Planned optional cloud saving option in the future
 
 ---
 
+# The project is in an early development stage. The current project is a prototype with many future planned additions
+
+<img src="https://imgur.com/a/EoBiZwm" alt="Demo of application" width="300"/>
